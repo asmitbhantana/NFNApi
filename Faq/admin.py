@@ -1,5 +1,4 @@
 from django.contrib import admin
-from .models import BaseUser
-
+from Faq.models import Faq
 # Register your models here.
-admin.site.register(BaseUser)
+admin.site.register(Faq)
