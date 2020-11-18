@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from rest_framework import generics, authentication, permissions
 from django.contrib.auth import get_user_model
 from rest_framework.authtoken.views import ObtainAuthToken
@@ -18,3 +19,7 @@ class CreateTokenView(ObtainAuthToken):
     serializer_class = AuthTokenSerializer
     '''Making the browser viewable token getting and setting platform'''
     renderer_classes = api_settings.DEFAULT_RENDERER_CLASSES
+
+
+def working(request):
+    return render(request, 'User/index.html', context=None)
