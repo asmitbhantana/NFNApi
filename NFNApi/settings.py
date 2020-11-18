@@ -25,9 +25,9 @@ SECRET_KEY = 'yp#j&ik6-29j)8_1uk2j3w4704p(pb00ev5l!l)bq3!-@w!gl='
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [['nfnapi.herokuapp.com', 'localhost', '127.0.0.1']]
+ALLOWED_HOSTS = ['nfnapi.herokuapp.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
