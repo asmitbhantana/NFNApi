@@ -1,12 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-
-# Create your models here.
 from User.abstract import DateTimeEntity
 
 
-class BaseUser(AbstractUser, DateTimeEntity):
+class BaseUser(AbstractUser):
     GENDER_CHOICE = {
         ("1", "Male"),
         ("2", "Female"),
@@ -30,6 +28,8 @@ class BaseUser(AbstractUser, DateTimeEntity):
     user_type = models.CharField(max_length=1, choices=USER_CHOICE, default="1")
     total_contribution = models.FloatField(default=0)
 
+    user_permissions = None
+    groups = None
+
     REQUIRED_FIELDS = ['username']
     USERNAME_FIELD = 'email'
-

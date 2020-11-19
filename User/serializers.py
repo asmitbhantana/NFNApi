@@ -7,8 +7,14 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
         fields = (
-        'email', 'password', 'gender', 'citizenship_number', 'current_address', 'permanent_address', 'username')
-        extra_kwargs = {'password': {'write_only': True, 'min_length': 8}}
+        'email', 'password', 'gender', 'citizenship_number', 'current_address',
+        'permanent_address', 'username', 'date_joined', 'pk')
+        extra_kwargs = {
+            'password': {'write_only': True, 'min_length': 8},
+            'date_joined': {'read_only': True, },
+            'pk': {'read_only': True}
+        }
+
 
     def create(self, validated_data):
         '''Create new user with encrypted data and returns it'''
