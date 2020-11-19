@@ -13,7 +13,10 @@ class UserSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         '''Create new user with encrypted data and returns it'''
         print(validated_data)
-        return get_user_model().objects.create(**validated_data)
+        user = get_user_model().objects.create(**validated_data)
+        user.set_password(validated_data['password'])
+        user.save()
+        return user
 
     def update(self, instance, validated_data):
         '''Update the user credentials
@@ -44,6 +47,7 @@ class AuthTokenSerializer(serializers.Serializer):
         email = attrs.get('email')
         password = attrs.get('password')
         user = authenticate(
+            request=self.context.get('request'),
             username=email,
             password=password
         )
