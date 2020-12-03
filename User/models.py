@@ -27,6 +27,7 @@ class BaseUser(AbstractUser):
     profile_pic = models.ImageField("profile-image", blank=True, null=True)
     user_type = models.CharField(max_length=1, choices=USER_CHOICE, default="1")
     total_contribution = models.FloatField(default=0)
+    dob = models.DateField(blank=True, null=True)
 
     user_permissions = None
     groups = None
