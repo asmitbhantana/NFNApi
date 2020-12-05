@@ -30,5 +30,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/user/', include('User.urls')),
     path('api/transaction/', include('Transactions.urls')),
+    path('api/faq/', include('Faq.urls')),
     # include('', include(router.urls))
 ]

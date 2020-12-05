@@ -6,4 +6,5 @@ app_name = "transaction"
 
 urlpatterns = [
     path('list/', TransactionsViewSet.as_view({'get': 'list', 'post': 'create'}), name="all"),
+    # path('')
 ]

@@ -11,6 +11,7 @@ from User.models import BaseUser
 
 
 class TransactionsViewSet(viewsets.ModelViewSet):
+
     serializer_class = TransactionSerializer
     queryset = None
 
