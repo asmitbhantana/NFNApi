@@ -10,7 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
         'first_name', 'last_name', 'email', 'password', 'gender', 'citizenship_number', 'current_address',
         'permanent_address', 'username', 'date_joined', 'pk', 'dob')
         extra_kwargs = {
-            'password': {'write_only': True, 'min_length': 8},
+            'password': {'write_only': True, 'min_length': 8, },
             'date_joined': {'read_only': True, },
             'pk': {'read_only': True}
         }

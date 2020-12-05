@@ -5,6 +5,7 @@ from Heats.models import Heat
 from User.models import BaseUser
 import datetime
 
+
 class Transaction(models.Model):
     TRANSACTION_TYPE = {
         ("MB", "Membership Payment"),

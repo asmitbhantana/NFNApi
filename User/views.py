@@ -31,6 +31,7 @@ class ManageUserView(generics.RetrieveUpdateAPIView):
     '''this overrides the features of getting object and 
         makes the retrive for auth user only
     '''
+
     def get_object(self):
         '''Auth user is retrived with the help of Token of user'''
         return self.request.user

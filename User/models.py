@@ -4,15 +4,15 @@ from django.contrib.auth.models import AbstractUser
 
 class BaseUser(AbstractUser):
     GENDER_CHOICE = {
-        ("1", "Male"),
-        ("2", "Female"),
-        ("3", "Other")
+        ("M", "Male"),
+        ("F", "Female"),
+        ("O", "Other")
     }
     USER_CHOICE = {
-        ("1", "User"),
-        ("2", "NFN Worker"),
-        ("3", "NFN Leader"),
-        ("4", "NFN Admin"),
+        ("U", "User"),
+        ("W", "NFN Worker"),
+        ("L", "NFN Leader"),
+        ("A", "NFN Admin"),
     }
     email = models.EmailField(unique=True, blank=False, null=False)
 

@@ -5,6 +5,5 @@ from Transactions.views import TransactionsViewSet
 app_name = "transaction"
 
 urlpatterns = [
-    path('all/', TransactionsViewSet.as_view({'get': 'list'}), name="all"),
-
+    path('list/', TransactionsViewSet.as_view({'get': 'list', 'post': 'create'}), name="all"),
 ]
